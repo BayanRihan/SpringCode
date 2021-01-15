@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: discovery-service
+
+
+---
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1.com
+    metadata-map:
+      zone: zone1
+  client:
+    service-url:
+      defaultZone: http://localhost:8769/eureka/
+      registerWithEureka: false
+server:
+  port: ${PORT:8761}
+
